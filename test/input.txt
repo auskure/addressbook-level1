@@ -91,6 +91,9 @@
   delete 1
   list
 
+  # the command inventory should still show the list of the all the people
+  inventory
+
 ##########################################################
 # test clear command
 ##########################################################

@@ -115,10 +115,7 @@ public class AddressBook {
     private static final String COMMAND_LIST_DESC = "Displays all persons as a list with index numbers.";
     private static final String COMMAND_LIST_EXAMPLE = COMMAND_LIST_WORD;
 
-    private static final String COMMAND_LIST_NAME_WORD = "list_names";
-    private static final String COMMAND_LIST_NAME_DESC = "Displays all persons' names as a list";
-    private static final String COMMAND_LIST_NAME_EXAMPLE = COMMAND_LIST_NAME_WORD;
-
+    private static final String COMMAND_LIST_ALTERNATIVE_WORD = "inventory";
 
     private static final String COMMAND_DELETE_WORD = "delete";
     private static final String COMMAND_DELETE_DESC = "Deletes a person identified by the index number used in "
@@ -374,6 +371,8 @@ public class AddressBook {
         final String commandType = commandTypeAndParams[0];
         final String commandArgs = commandTypeAndParams[1];
         switch (commandType) {
+            case COMMAND_LIST_ALTERNATIVE_WORD:
+                return executeListAllPersonsInAddressBook();
             case COMMAND_ADD_WORD:
                 return executeAddPerson(commandArgs);
             case COMMAND_FIND_WORD:
@@ -388,8 +387,6 @@ public class AddressBook {
                 return getUsageInfoForAllCommands();
             case COMMAND_EXIT_WORD:
                 executeExitProgramRequest();
-            case COMMAND_LIST_NAME_WORD:
-                return executeListAllNamesInAddressBook();
         default:
             return getMessageForInvalidCommandInput(commandType, getUsageInfoForAllCommands());
         }
