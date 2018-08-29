@@ -117,6 +117,11 @@ public class AddressBook {
 
     private static final String COMMAND_LIST_ALTERNATIVE_WORD = "inventory";
 
+    private static final String COMMAND_LIST_SORTED = "sorted";
+    private static final String COMMAND_LIST__SORTED_DESC = "Displays all persons as a sorted list with index numbers.";
+    private static final String COMMAND_LIST_SORTED_EXAMPLE = COMMAND_LIST_WORD;
+
+
     private static final String COMMAND_DELETE_WORD = "delete";
     private static final String COMMAND_DELETE_DESC = "Deletes a person identified by the index number used in "
                                                     + "the last find/list call.";
